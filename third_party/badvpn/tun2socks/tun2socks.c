@@ -738,6 +738,9 @@ void run()
         goto fail5;
     }
 #endif
+    // Signal the invoker that tun2socks is ready. This is necessary for configuring the routing
+    // table in Windows only after the TUN/TAP device has been configured.
+    BLog(BLOG_ERROR, "tun2socks ready");
     // ==== OUTLINE ====
 
     // enter event loop
